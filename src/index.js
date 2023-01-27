@@ -8,13 +8,14 @@ import { legacy_createStore as createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { devToolsEnhancer } from '@redux-devtools/extension';
 
-const store = createStore(rootReducer, devToolsEnhancer())
+const store = createStore(rootReducer, devToolsEnhancer())   //rootReducer modules 두개를 합쳐논거
 console.log(store.getState())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider store={store}> 
+    {/* provider는 스토어 리액트 전역에서 사용할수 있음 */}
     <App />
     </Provider>
   </React.StrictMode>

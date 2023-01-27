@@ -2,13 +2,14 @@
 const ADD_TODO = 'todos/ADD_TODO';
 const TOGGLE_TODO = 'todos/TOGGLE_TODO';
 
-//액션 생성 함수
+//액션 생성 함수 - 객체리턴
 let nextId = 1;
 export const addTodo = (text) =>({
     type: ADD_TODO,
     todo: {
-        id: nextId++,
-        text: text
+        id: nextId++, //새 항목 추가하고 nextId값을 1 더해줌
+        text: text,
+        done: false
     }
 })
 export const toggleTodo = (id) => ({
